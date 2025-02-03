@@ -13,6 +13,9 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 from pathlib import Path
 import os
 import dj_database_url
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -25,6 +28,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY', default='your secret key')
 
 # SECURITY WARNING: don't run with debug turned on in production!
+#DEBUG = True
 DEBUG = 'RENDER' not in os.environ
 
 
@@ -58,6 +62,11 @@ CLOUDINARY_STORAGE = {
 
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
+cloudinary.config(
+    cloud_name='dnvcwbzhy',
+    api_key='171644717444116',
+    api_secret='UlfYNurFyrvXIhB4mzkGW96ed7s'
+)
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

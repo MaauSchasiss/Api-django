@@ -51,7 +51,8 @@ INSTALLED_APPS = [
     'project',
     'rest_framework',
     'cloudinary', 
-    'cloudinary_storage'
+    'cloudinary_storage',
+    'corsheaders',
 ]
 
 CLOUDINARY_STORAGE = {
@@ -77,9 +78,12 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
+    'corsheaders.middleware.CorsMiddleware'
 ]
 
 ROOT_URLCONF = 'galacticos.urls'
+
+CORS_ALLOW_ALL_ORIGINS = True
 
 TEMPLATES = [
     {
